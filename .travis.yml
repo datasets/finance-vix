@@ -4,4 +4,4 @@ after_success: '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == 
   ] && cid publish'
 env:
   global:
-    secure: ngjCF1mDONc9aYiVw0JJgjFLVVOfTOtm4HmkQCYXkhEg6DK3l08jAFZ2ULD6Q/qTBMx0TU/CxTJdNOVb1feHo950Emr9ZNuV/FfbkScLIulcuk6S6Z7UDU4WzshEFcp5e5jOFPbGbjaCkZtZNc6v8ROSnyhRyQj9jVp6T6pCtr8=
+    secure: Q2SH+woE6L82tu2/gLtqivcaSCp3vNW8T5Ra0GoxQ0aPEsta7zH1oPwc8pOCZqG13OH6P+Ns6zuQp6C5Wz0d12RUFjopTSupI2eA98j2GH+YuBRuFPp8rdiY5VbnkF3AZSx8AVc4N45RkkID9GxPqgOqkojg69igci1GjskiCzw=
