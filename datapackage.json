@@ -19,27 +19,43 @@
           {
             "name": "Date",
             "type": "date",
-            "description": ""
+            "description": "",
+            "constraints": {
+              "pattern": "[0-9]{4}-[0-9]{2}-[0-9]{2}",
+              "required": true
+            }
           },
           {
             "name": "VIXOpen",
             "type": "number",
-            "description": ""
+            "description": "",
+            "constraints": {
+              "required": true
+            }
           },
           {
             "name": "VIXHigh",
             "type": "number",
-            "description": ""
+            "description": "",
+            "constraints": {
+              "required": true
+            }
           },
           {
             "name": "VIXLow",
             "type": "number",
-            "description": ""
+            "description": "",
+            "constraints": {
+              "required": true
+            }
           },
           {
             "name": "VIXClose",
             "type": "number",
-            "description": ""
+            "description": "",
+            "constraints": {
+              "required": true
+            }
           }
         ]
       }
