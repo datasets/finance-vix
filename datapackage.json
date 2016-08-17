@@ -41,7 +41,8 @@
             "type": "number",
             "description": ""
           }
-        ]
+        ],
+        "primaryKey": "Date"
       }
     }
   ],
