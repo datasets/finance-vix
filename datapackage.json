@@ -4,10 +4,13 @@
   "homepage": "http://www.cboe.com/micro/VIX/",
   "version": "0.1.0",
   "license": "PDDL-1.0",
-  "sources": [{
-    "name": "CBOE VIX Page",
-    "web": "http://www.cboe.com/micro/vix/historical.aspx"
-  }],
+  "sources": [
+    {
+      "name": "CBOE VIX Page",
+      "web": "http://www.cboe.com/micro/vix/historical.aspx",
+      "title": "CBOE VIX Page"
+    }
+  ],
   "resources": [
     {
       "name": "vix-daily",
@@ -19,7 +22,8 @@
           {
             "name": "Date",
             "type": "date",
-            "description": ""
+            "description": "",
+            "format": "any"
           },
           {
             "name": "VIXOpen",
