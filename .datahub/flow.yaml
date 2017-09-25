@@ -1,0 +1,27 @@
+meta:
+  dataset: finance-vix
+  findability: published
+  owner: core
+  ownerid: core
+  version: 1
+inputs:
+- kind: datapackage
+  parameters:
+    resource-mapping:
+      vix-daily: http://www.cboe.com/publish/ScheduledTask/MktData/datahouse/vixcurrent.csv
+      readme:
+  url: https://github.com/datasets/finance-vix/blob/master/.datahub/datapackage.json
+processing:
+  -
+    input: vix-daily
+    tabulator:
+      skip_rows: 2
+      headers:
+        - Date
+        - VIXOpen
+        - VIXHigh
+        - VIXLow
+        - VIXClose
+    output: vix-daily
+schedule:
+    crontab: '0 0 * * *'
