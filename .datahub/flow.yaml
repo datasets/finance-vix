@@ -9,7 +9,6 @@ inputs:
   parameters:
     resource-mapping:
       vix-daily: http://www.cboe.com/publish/ScheduledTask/MktData/datahouse/vixcurrent.csv
-      readme:
   url: https://github.com/datasets/finance-vix/blob/master/.datahub/datapackage.json
 processing:
   -
