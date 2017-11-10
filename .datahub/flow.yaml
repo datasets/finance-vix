@@ -6,10 +6,41 @@ meta:
   version: 1
 inputs:
 - kind: datapackage
+  url: https://raw.githubusercontent.com/datasets/finance-vix/master/.datahub/datapackage.json
   parameters:
     resource-mapping:
       vix-daily: http://www.cboe.com/publish/ScheduledTask/MktData/datahouse/vixcurrent.csv
-  url: https://raw.githubusercontent.com/datasets/finance-vix/master/.datahub/datapackage.json
+    descriptor:
+      name: finance-vix
+      title: VIX - CBOE Volatility Index
+      homepage: http://www.cboe.com/micro/VIX/
+      version: 0.1.0
+      license: PDDL-1.0
+      resources:
+        -
+          name: vix-daily
+          path: data/vix-daily.csv
+          format: csv
+          mediatype: text/csv
+          schema:
+            fields:
+              -
+                name: Date
+                type: date
+                format: any
+              -
+                name: VIXOpen
+                type: number
+              -
+                name: VIXHigh
+                type: number
+              -
+                name: VIXLow
+                type: number
+              -
+                name: VIXClose
+                type: number
+            primaryKey: Date
 processing:
   -
     input: vix-daily
@@ -22,5 +53,4 @@ processing:
         - VIXLow
         - VIXClose
     output: vix-daily
-schedule:
-    crontab: '0 0 * * *'
+schedule: 'every 1d'
