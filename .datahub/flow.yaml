@@ -41,6 +41,16 @@ inputs:
                 name: VIXClose
                 type: number
             primaryKey: Date
+      views:
+        -
+          name: graph
+          title: VIX - CBOE Volatility Index
+          specType: simple
+          spec:
+            type: line
+            group: Date
+            series:
+              - VIXClose
 processing:
   -
     input: vix-daily
