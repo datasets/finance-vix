@@ -3,11 +3,17 @@
   "title": "VIX - CBOE Volatility Index",
   "homepage": "http://www.cboe.com/micro/VIX/",
   "version": "0.1.0",
-  "license": "PDDL-1.0",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
   "sources": [
     {
       "name": "CBOE VIX Page",
-      "web": "http://www.cboe.com/micro/vix/historical.aspx",
+      "path": "http://www.cboe.com/micro/vix/historical.aspx",
       "title": "CBOE VIX Page"
     }
   ],
