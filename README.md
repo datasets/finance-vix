@@ -19,22 +19,28 @@ From the [VIX FAQ][faq]:
 > volatilities of eight different OEX option series so that, at any given time,
 > it represented the implied volatility of a hypothetical at-the-money OEX
 > option with exactly 30 days to expiration.
-> 
+>
 > The New VIX still measures the market's expectation of 30-day volatility, but
 > in a way that conforms to the latest thinking and research among industry
 > practitioners. The New VIX is based on S&P 500 index option prices and
 > incorporates information from the volatility "skew" by using a wider range of
-> strike prices rather than just at-the-money series. 
+> strike prices rather than just at-the-money series.
 
 [faq]: http://www.cboe.com/micro/vix/faq.aspx
 
 ## Preparation
 
-Run the shell script:
+You will need Python 3.6 or greater and dataflows library to run the script
 
-    . scripts/process.sh
+To update the data run the process script locally:
 
-Output data is in `data/`.
+```
+# Install dataflows
+pip install dataflows
+
+# Run the script
+python flows/run.py
+```
 
 ### TODO
 
