@@ -5,6 +5,7 @@ from dataflows import add_metadata, dump_to_path, load, set_type, printer
 def rename(package: PackageWrapper):
     package.pkg.descriptor['resources'][0]['name'] = 'vix-daily'
     package.pkg.descriptor['resources'][0]['path'] = 'data/vix-daily.csv'
+    package.pkg.descriptor['resources'][0]['title'] = 'VIX Daily'
     yield package.pkg
     res_iter = iter(package)
     first: ResourceWrapper = next(res_iter)
@@ -16,6 +17,7 @@ finance_vix = Flow(
     add_metadata(
         name="finance-vix",
         title= "VIX - CBOE Volatility Index",
+        homepage= 'http://www.cboe.com/micro/VIX/',
         sources=[
             {
               "name": "CBOE VIX Page",
