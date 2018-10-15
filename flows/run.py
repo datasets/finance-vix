@@ -32,14 +32,13 @@ finance_vix = Flow(
               "name": "graph",
               "title": "VIX - CBOE Volatility Index",
               "specType": "simple",
-              "spec": {"type": "line","group": "Date","series": ["VIXClose"]}
+              "spec": {"type": "line","group": "Date","series": ["VIX Close"]}
             }
         ]
     ),
     load(
         load_source='http://www.cboe.com/publish/ScheduledTask/MktData/datahouse/vixcurrent.csv',
-        skip_rows=2,
-        headers=['Date', 'VIXOpen', 'VIXHigh', 'VIXLow', 'VIXClose']
+        headers=2
     ),
     set_type('Date', type='date', format='any'),
     rename,
