@@ -39,7 +39,7 @@ To update the data run the process script locally:
 pip install dataflows
 
 # Run the script
-python flows/run.py
+python flows/finance-vix.py
 ```
 
 ### TODO
