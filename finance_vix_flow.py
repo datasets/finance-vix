@@ -1,7 +1,6 @@
 import os
 
-from dataflows import add_metadata, dump_to_path, load, set_type, validate
-from dataflows import Flow, update_resource
+from dataflows import Flow, update_resource, add_metadata,load, set_type, validate, cache
 
 
 def readme(fpath='README.md'):
@@ -47,8 +46,7 @@ finance_vix = Flow(
     ),
     set_type('Date', type='date', format='any'),
     update_resource('vix-daily', **{'title': 'VIX Daily', 'path':'data/vix-daily.csv', 'dpp:streaming': True}),
-    validate(),
-    dump_to_path(),
+    validate()
 )
 
 
