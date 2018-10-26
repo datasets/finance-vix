@@ -1,6 +1,6 @@
 import os
 
-from dataflows import Flow, update_resource, add_metadata,load, set_type, validate, cache
+from dataflows import Flow, update_resource, add_metadata,load, set_type, validate
 
 
 def readme(fpath='README.md'):
