@@ -11,9 +11,10 @@ cp -a ./README.md portal/public/dataset
 PORTAL_DATASET_PATH=$PWD"/portal/public/dataset"
 export PORTAL_DATASET_PATH
 
-cd portal
 mkdir -p .github && mkdir -p .github/workflows && touch .github/workflows/main.yml
 curl https://raw.githubusercontent.com/datopian/portal.js/main/scripts/gh-page-builder-action.yml > .github/workflows/main.yml
+
+cd portal
 assetPrefix='"/'$PORTAL_REPO_NAME'/"'
 basePath='"/'$PORTAL_REPO_NAME'"'
 echo 'module.exports = {assetPrefix:' ${assetPrefix}', basePath: '${basePath}' }' > next.config.js ## This ensures css and public folder works
