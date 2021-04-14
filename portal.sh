@@ -21,4 +21,4 @@ echo 'module.exports = {assetPrefix:' ${assetPrefix}', basePath: '${basePath}' }
 cd ..
 git add .
 git commit -m "Add dataset build feature"
-# git push 
+git push 

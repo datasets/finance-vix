@@ -1,1 +1,1 @@
-module.exports = {assetPrefix: "//", basePath: "/" }
+module.exports = {assetPrefix: "/finance-vix/", basePath: "/finance-vix" }
