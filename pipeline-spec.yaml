@@ -1,6 +1,0 @@
-finance-vix-flow:
-  pipeline:
-    - flow: finance_vix_flow
-    - run: datahub.dump.to_datahub
-  schedule:
-    crontab: 59 23 * * *

@@ -1,3 +1,5 @@
+# Finance VIX
+
 CBOE Volatility Index (VIX) time-series dataset including daily open, close,
 high and low. The CBOE Volatility Index (VIX) is a key measure of market
 expectations of near-term volatility conveyed by S&P 500 stock index option
@@ -28,24 +30,13 @@ From the [VIX FAQ][faq]:
 
 [faq]: http://www.cboe.com/micro/vix/faq.aspx
 
-## Preparation
+## Development
 
-You will need Python 3.6 or greater and dataflows library to run the script
+This is a simple pipeline where the only requirement is to have `curl` and `make`. You can get the data by running the following command locally:
 
-To update the data run the process script locally:
-
+```bash
+make
 ```
-# Install dataflows
-pip install dataflows
-
-# Run the script
-python flows/finance-vix.py
-```
-
-### TODO
-
-* Incorporate computed historical data (1990-2003)
-* Consider incorporating VOX data
 
 ## License
 
@@ -54,4 +45,4 @@ factual nature of the data and its source from a US company would imagine this
 was public domain and as such have licensed the Data Package under the Public
 Domain Dedication and License (PDDL).
 
-[historical]: http://www.cboe.com/micro/vix/historical.aspx
+[historical]: https://www.cboe.com/tradable_products/vix/vix_historical_data/
