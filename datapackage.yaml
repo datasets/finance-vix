@@ -1,24 +1,25 @@
-name: finance-vix
-title: CBOE Volatility Index
-version: "2.0"
+collection: stock-market-data
 licenses:
-  - name: ODC-PDDL-1.0
-    path: http://opendatacommons.org/licenses/pddl/
-    title: Open Data Commons Public Domain Dedication and License v1.0
+- name: ODC-PDDL-1.0
+  path: http://opendatacommons.org/licenses/pddl/
+  title: Open Data Commons Public Domain Dedication and License v1.0
+name: finance-vix
 resources:
-  - name: vix-daily
-    path: data/vix-daily.csv
-    format: csv
-    mediatype: text/csv
-    schema:
-      fields:
-        - name: DATE,OPEN,HIGH,LOW,CLOSE
-          type: string
-        - name: OPEN
-          type: number
-        - name: HIGH
-          type: number
-        - name: LOW
-          type: number
-        - name: CLOSE
-          type: number
+- format: csv
+  mediatype: text/csv
+  name: vix-daily
+  path: data/vix-daily.csv
+  schema:
+    fields:
+    - name: DATE,OPEN,HIGH,LOW,CLOSE
+      type: string
+    - name: OPEN
+      type: number
+    - name: HIGH
+      type: number
+    - name: LOW
+      type: number
+    - name: CLOSE
+      type: number
+title: CBOE Volatility Index
+version: '2.0'
