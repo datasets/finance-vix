@@ -14,7 +14,7 @@ resources:
     fields:
     - name: DATE
       type: date
-      format: %m/%d/%Y
+      format: '%m/%d/%Y'
       description: Date in MM/DD/YYYY format
     - name: OPEN
       type: number
