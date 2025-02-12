@@ -12,8 +12,10 @@ resources:
   path: data/vix-daily.csv
   schema:
     fields:
-    - name: DATE,OPEN,HIGH,LOW,CLOSE
-      type: string
+    - name: DATE
+      type: date
+      format: %m/%d/%Y
+      description: Date in MM/DD/YYYY format
     - name: OPEN
       type: number
     - name: HIGH
@@ -24,3 +26,14 @@ resources:
       type: number
 title: CBOE Volatility Index
 version: '2.0'
+views:
+- resources: vix-daily
+  name: daily-opening-closing-figures
+  title: Daily opening and closing figures
+  specType: simple
+  spec:
+    group: DATE
+    series:
+      - OPEN
+      - CLOSE
+    type: line
