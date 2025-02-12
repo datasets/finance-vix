@@ -27,7 +27,8 @@ resources:
 title: CBOE Volatility Index
 version: '2.0'
 views:
-- resources: vix-daily
+- resources:
+    - vix-daily
   name: daily-opening-closing-figures
   title: Daily opening and closing figures
   specType: simple
