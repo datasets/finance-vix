@@ -1,4 +1,5 @@
 collection: stock-market-data
+has_premium: true
 licenses:
 - name: ODC-PDDL-1.0
   path: http://opendatacommons.org/licenses/pddl/
