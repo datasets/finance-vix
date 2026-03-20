@@ -1,0 +1,91 @@
+{
+  "name": "finance-vix",
+  "title": "VIX - CBOE Volatility Index",
+  "collection": "stock-market-data",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "views": [
+    {
+      "name": "vix-fear-index",
+      "title": "VIX Fear Index (1990–present)",
+      "description": "The CBOE Volatility Index (VIX) measures expected 30-day volatility of the S&P 500, derived from options prices — widely called the 'fear gauge'. Below 20 signals complacency; above 30 indicates fear; above 40 marks extreme panic. Historic spikes: 1998 (LTCM/Russia crisis ~45), 2008 financial crisis (peak 80), 2020 COVID crash (peak 82).",
+      "resources": ["vix-monthly"],
+      "specType": "plot",
+      "spec": {
+        "dateFields": ["Date"],
+        "height": 400,
+        "marginLeft": 55,
+        "x": { "label": null },
+        "y": { "label": "VIX Index", "grid": true },
+        "marks": [
+          {
+            "type": "ruleY",
+            "staticData": [{ "y": 20 }],
+            "y": "y", "stroke": "#fbbf24", "strokeDasharray": "4,4", "tip": false
+          },
+          {
+            "type": "ruleY",
+            "staticData": [{ "y": 30 }],
+            "y": "y", "stroke": "#f97316", "strokeDasharray": "4,4", "tip": false
+          },
+          {
+            "type": "text",
+            "staticData": [{ "x": "1990-06-01", "y": 21.5, "label": "Elevated (>20)" }],
+            "x": "x", "y": "y", "text": "label",
+            "fill": "#fbbf24", "fontSize": 11, "textAnchor": "start"
+          },
+          {
+            "type": "text",
+            "staticData": [{ "x": "1990-06-01", "y": 31.5, "label": "Fear (>30)" }],
+            "x": "x", "y": "y", "text": "label",
+            "fill": "#f97316", "fontSize": 11, "textAnchor": "start"
+          },
+          {
+            "type": "areaY",
+            "x": "Date", "y": "Close",
+            "fill": "#6366f1", "fillOpacity": 0.15, "tip": false
+          },
+          {
+            "type": "line",
+            "x": "Date", "y": "Close",
+            "stroke": "#6366f1", "strokeWidth": 1.5, "tip": true
+          }
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "vix-monthly",
+      "path": "data/vix-monthly.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          { "name": "Date", "type": "date", "format": "%Y-%m-%d" },
+          { "name": "Close", "type": "number", "description": "Month-end VIX closing value" }
+        ]
+      }
+    },
+    {
+      "name": "vix-daily",
+      "path": "data/vix-daily.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          { "name": "DATE", "type": "date", "format": "%m/%d/%Y" },
+          { "name": "OPEN", "type": "number" },
+          { "name": "HIGH", "type": "number" },
+          { "name": "LOW", "type": "number" },
+          { "name": "CLOSE", "type": "number" }
+        ]
+      }
+    }
+  ]
+}
