@@ -17,7 +17,7 @@
       "resources": ["vix-daily"],
       "specType": "plot",
       "spec": {
-        "dateFields": ["Date"],
+        "dateFields": ["DATE"],
         "height": 400,
         "marginLeft": 55,
         "x": { "label": null },
@@ -44,11 +44,6 @@
             "staticData": [{ "x": "1990-06-01", "y": 31.5, "label": "Fear (>30)" }],
             "x": "x", "y": "y", "text": "label",
             "fill": "#f97316", "fontSize": 11, "textAnchor": "start"
-          },
-          {
-            "type": "areaY",
-            "x": "DATE", "y": "CLOSE",
-            "fill": "#6366f1", "fillOpacity": 0.15, "tip": false
           },
           {
             "type": "line",
