@@ -14,7 +14,7 @@
       "name": "vix-fear-index",
       "title": "VIX Fear Index (1990–present)",
       "description": "The CBOE Volatility Index (VIX) measures expected 30-day volatility of the S&P 500, derived from options prices — widely called the 'fear gauge'. Below 20 signals complacency; above 30 indicates fear; above 40 marks extreme panic. Historic spikes: 1998 (LTCM/Russia crisis ~45), 2008 financial crisis (peak 80), 2020 COVID crash (peak 82).",
-      "resources": ["vix-monthly"],
+      "resources": ["vix-daily"],
       "specType": "plot",
       "spec": {
         "dateFields": ["Date"],
@@ -47,12 +47,12 @@
           },
           {
             "type": "areaY",
-            "x": "Date", "y": "Close",
+            "x": "DATE", "y": "CLOSE",
             "fill": "#6366f1", "fillOpacity": 0.15, "tip": false
           },
           {
             "type": "line",
-            "x": "Date", "y": "Close",
+            "x": "DATE", "y": "CLOSE",
             "stroke": "#6366f1", "strokeWidth": 1.5, "tip": true
           }
         ]
