@@ -3,13 +3,13 @@
 # Finance VIX
 
 CBOE Volatility Index (VIX) time-series dataset including daily open, close,
-high and low. The CBOE Volatility Index (VIX) is a key measure of market
-expectations of near-term volatility conveyed by S&P 500 stock index option
-prices introduced in 1993.
+high and low, covering January 1990 to present. The CBOE Volatility Index (VIX)
+is a key measure of market expectations of near-term volatility conveyed by
+S&P 500 stock index option prices introduced in 1993.
 
 ## Data
 
-From the [VIX FAQ][faq]:
+From the [CBOE VIX historical data page][historical]:
 
 > In 1993, the Chicago Board Options Exchange® (CBOE®) introduced the CBOE
 > Volatility Index®, VIX®, and it quickly became the benchmark for stock market
@@ -30,7 +30,16 @@ From the [VIX FAQ][faq]:
 > incorporates information from the volatility "skew" by using a wider range of
 > strike prices rather than just at-the-money series.
 
-[faq]: http://www.cboe.com/micro/vix/faq.aspx
+[historical]: https://www.cboe.com/tradable_products/vix/vix_historical_data/
+
+### Data quirks
+
+- **Early OHLC data (through 06/11/2004):** The first 506 rows of `vix-daily.csv`
+  have identical OPEN, HIGH, LOW, and CLOSE values. CBOE only recorded daily
+  closing values before mid-2004; the open/high/low fields are filled with the
+  close value for those dates.
+- **Monthly data:** `vix-monthly.csv` contains month-end closing values but is
+  not updated automatically by the workflow. Treat it as a static snapshot.
 
 ## Development
 
@@ -40,11 +49,12 @@ This is a simple pipeline where the only requirement is to have `curl` and `make
 make
 ```
 
+The daily data is fetched from:
+`https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv`
+
 ## License
 
 No obvious statement on [historical data page][historical]. Given size and
 factual nature of the data and its source from a US company would imagine this
 was public domain and as such have licensed the Data Package under the Public
 Domain Dedication and License (PDDL).
-
-[historical]: https://www.cboe.com/tradable_products/vix/vix_historical_data/
