@@ -1,12 +1,20 @@
 {
   "name": "finance-vix",
   "title": "VIX - CBOE Volatility Index",
+  "description": "Daily and monthly time-series of the CBOE Volatility Index (VIX) from January 1990 to present, including open, high, low, and close values. VIX measures the market's expectation of 30-day S&P 500 volatility derived from options prices and is widely known as the 'fear gauge'.",
   "collection": "stock-market-data",
   "licenses": [
     {
       "name": "ODC-PDDL-1.0",
       "path": "http://opendatacommons.org/licenses/pddl/",
       "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CBOE VIX Historical Data",
+      "path": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+      "title": "CBOE VIX Daily Price History CSV"
     }
   ],
   "views": [
@@ -58,27 +66,59 @@
     {
       "name": "vix-monthly",
       "path": "data/vix-monthly.csv",
+      "description": "Month-end VIX closing values aggregated from the daily series. Note: this file is not updated automatically by the workflow and may be stale.",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {
         "fields": [
-          { "name": "Date", "type": "date", "format": "%Y-%m-%d" },
-          { "name": "Close", "type": "number", "description": "Month-end VIX closing value" }
+          {
+            "name": "Date",
+            "type": "date",
+            "format": "default",
+            "description": "Month-end date in YYYY-MM-DD format."
+          },
+          {
+            "name": "Close",
+            "type": "number",
+            "description": "Month-end VIX closing value"
+          }
         ]
       }
     },
     {
       "name": "vix-daily",
       "path": "data/vix-daily.csv",
+      "description": "Daily VIX open, high, low, and close values from January 1990 to present. Rows through 06/11/2004 (506 rows) have identical OPEN, HIGH, LOW, and CLOSE values because CBOE only recorded closing prices before that date.",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {
         "fields": [
-          { "name": "DATE", "type": "date", "format": "%m/%d/%Y" },
-          { "name": "OPEN", "type": "number" },
-          { "name": "HIGH", "type": "number" },
-          { "name": "LOW", "type": "number" },
-          { "name": "CLOSE", "type": "number" }
+          {
+            "name": "DATE",
+            "type": "date",
+            "format": "%m/%d/%Y",
+            "description": "Trading date in MM/DD/YYYY format."
+          },
+          {
+            "name": "OPEN",
+            "type": "number",
+            "description": "VIX opening value. Identical to CLOSE for dates on or before 06/11/2004."
+          },
+          {
+            "name": "HIGH",
+            "type": "number",
+            "description": "VIX intraday high. Identical to CLOSE for dates on or before 06/11/2004."
+          },
+          {
+            "name": "LOW",
+            "type": "number",
+            "description": "VIX intraday low. Identical to CLOSE for dates on or before 06/11/2004."
+          },
+          {
+            "name": "CLOSE",
+            "type": "number",
+            "description": "VIX closing value."
+          }
         ]
       }
     }
