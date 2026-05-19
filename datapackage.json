@@ -66,7 +66,7 @@
     {
       "name": "vix-monthly",
       "path": "data/vix-monthly.csv",
-      "description": "Month-end VIX closing values aggregated from the daily series. Note: this file is not updated automatically by the workflow and may be stale.",
+      "description": "Month-end VIX closing values derived from the daily series. Each row is the last trading day of that calendar month.",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {

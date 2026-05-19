@@ -38,8 +38,8 @@ From the [CBOE VIX historical data page][historical]:
   have identical OPEN, HIGH, LOW, and CLOSE values. CBOE only recorded daily
   closing values before mid-2004; the open/high/low fields are filled with the
   close value for those dates.
-- **Monthly data:** `vix-monthly.csv` contains month-end closing values but is
-  not updated automatically by the workflow. Treat it as a static snapshot.
+- **Monthly data:** `vix-monthly.csv` is derived from the daily file on every
+  run. Each row is the last trading day's close for that calendar month.
 
 ## Development
 
