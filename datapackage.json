@@ -96,8 +96,8 @@
           {
             "name": "DATE",
             "type": "date",
-            "format": "%m/%d/%Y",
-            "description": "Trading date in MM/DD/YYYY format."
+            "format": "default",
+            "description": "Trading date in YYYY-MM-DD format."
           },
           {
             "name": "OPEN",
